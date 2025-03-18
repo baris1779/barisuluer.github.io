@@ -1,55 +1,79 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barış Uluer - Projelerim</title>
+    <title>Barış Uluer - Projects</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f8f9fa;
             text-align: center;
         }
         header {
-            background-color: #f4f4f4;
+            background-color: #343a40;
+            color: white;
             padding: 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding-left: 10%;
+            padding-right: 10%;
         }
         .logo {
-            height: 50px;
+            height: 40px;
         }
         .container {
-            max-width: 800px;
-            margin: 20px auto;
-            text-align: left;
+            max-width: 900px;
+            margin: 40px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
         }
-        .projects a {
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 250px;
+            text-align: center;
+        }
+        .project-card a {
             display: block;
-            margin: 10px 0;
-            color: blue;
+            margin-top: 10px;
+            color: #007bff;
             text-decoration: none;
+            font-weight: bold;
+        }
+        .project-card a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
     <header>
         <h2>Barış Uluer</h2>
-        <h2>Hacettepe Üniversitesi <img class="logo" src="hacettepe-logo.png" alt="Hacettepe Üniversitesi Logosu"></h2>
+        <h2>Hacettepe University <img class="logo" src="hacettepe-logo.png" alt="Hacettepe University Logo"></h2>
     </header>
     <div class="container">
-        <section class="about">
-            <h3>Hakkımda</h3>
-            <p>Ben Barış Uluer, Hacettepe Üniversitesi Elektrik Elektronik Mühendisliği 1. sınıf öğrencisiyim.</p>
-        </section>
-        <section class="projects">
-            <h3>Projelerim</h3>
-            <a href="https://github.com/kullanici/proje1" target="_blank">Proje 1</a>
-            <a href="https://github.com/kullanici/proje2" target="_blank">Proje 2</a>
-            <a href="https://github.com/kullanici/proje3" target="_blank">Proje 3</a>
-        </section>
+        <div class="project-card">
+            <h3>Project 1</h3>
+            <p>Short description of project 1.</p>
+            <a href="https://github.com/kullanici/proje1" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>Project 2</h3>
+            <p>Short description of project 2.</p>
+            <a href="https://github.com/kullanici/proje2" target="_blank">View on GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>Project 3</h3>
+            <p>Short description of project 3.</p>
+            <a href="https://github.com/kullanici/proje3" target="_blank">View on GitHub</a>
+        </div>
     </div>
 </body>
 </html>
