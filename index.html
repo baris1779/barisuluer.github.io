@@ -3,82 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barış Uluer - Projects</title>
+    <title>Barış Uluer</title>
+    <!-- Prism.js CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
     <style>
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            text-align: center;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        header {
-            background-color: #343a40;
-            color: white;
-            padding: 20px;
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding-left: 10%;
-            padding-right: 10%;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
         }
-        .logo {
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+        .header-left img {
+            width: 40px;
             height: 40px;
+            margin-right: 10px;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 24px;
+            color: #2c3e50;
+        }
+        .header span {
+            font-size: 18px;
+            color: #7f8c8d;
         }
         .container {
-            max-width: 900px;
+            max-width: 800px;
             margin: 40px auto;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-        }
-        .project-card {
-            background: white;
-            border-radius: 10px;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            width: 250px;
             text-align: center;
         }
-        .project-card a {
-            display: block;
-            margin-top: 10px;
-            color: #007bff;
+        .about-me {
+            background-color: #fff;
+            padding: 20px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-align: left;
+        }
+        .intro {
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+        .project-box {
+            display: inline-block;
+            width: 200px;
+            padding: 20px;
+            margin: 10px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+            color: #2980b9;
+            font-weight: bold;
+            transition: transform 0.2s, box-shadow 0.2s;
+            cursor: pointer;
+        }
+        .project-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        .footer {
+            background-color: #fff;
+            padding: 10px;
+            text-align: left;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .footer .social-links {
+            display: flex;
+            align-items: center;
+            padding-left: 20px;
+        }
+        .footer a {
+            color: #2980b9;
             text-decoration: none;
             font-weight: bold;
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
         }
-        .project-card a:hover {
-            text-decoration: underline;
+        .footer img {
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            overflow-y: auto; /* Allow scrolling if modal content overflows */
+        }
+        .modal-content {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            width: 70%;
+            max-width: 600px;
+            border-radius: 8px;
+            position: relative;
+            max-height: 80vh; /* Limit height to 80% of viewport height */
+            overflow-y: auto; /* Enable scrolling within modal if content is too long */
+            box-sizing: border-box;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        pre {
+            background-color: #f8f8f8;
+            padding: 10px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 0;
+        }
+        #modalDescription, #modalLink {
+            margin-top: 10px; /* Add spacing above description and link */
         }
     </style>
 </head>
 <body>
-    <header>
-        <h2>Barış Uluer</h2>
-        <h2>Hacettepe University <img class="logo" src="hacettepe-logo.png" alt="Hacettepe University Logo"></h2>
-    </header>
+    <div class="header">
+        <div class="header-left">
+            <img src="hacettepe-logo.png" alt="Hacettepe Logo">
+            <h1>Barış Uluer</h1>
+        </div>
+        <img src="hacettepe-logo.png" alt="Hacettepe Logo">
+        <span>Hacettepe University</span>
+    </div>
     <div class="container">
-        <div class="project-card">
-            <h3>Project 1</h3>
-            <p>Short description of project 1.</p>
-            <a href="https://github.com/kullanici/proje1" target="_blank">View on GitHub</a>
+        <div class="about-me">
+            <h2>About Me</h2>
+            <p><strong>Name Surname:</strong> Barış ULUER</p>
+            <p><strong>Department:</strong> Electrical and Electronics Engineering, 1st Year</p>
+            <p><strong>Student Number:</strong> 2230357102</p>
         </div>
-        <div class="project-card">
-            <h3>Project 2</h3>
-            <p>Short description of project 2.</p>
-            <a href="https://github.com/kullanici/proje2" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-            <h3>Project 3</h3>
-            <p>Short description of project 3.</p>
-            <a href="https://github.com/kullanici/proje3" target="_blank">View on GitHub</a>
-        </div>
-        <div class="project-card">
-            <h3>Project 4</h3>
-            <p>Short description of project 4.</p>
-            <a href="https://github.com/kullanici/proje3" target="_blank">View on GitHub</a>
+        <h2>My Projects</h2>
+        <div class="project-box" onclick="openModal('Hw1-Q2')">Hw1-Q2</div>
+        <div class="project-box" onclick="openModal('Hw2-Q3')">Hw2-Q3</div>
+        <div class="project-box" onclick="openModal('Hw3-Q4a')">Hw3-Q4a</div>
+        <div class="project-box" onclick="openModal('Hw3-Q4b')">Hw3-Q4b</div>
+    </div>
+    <div class="footer">
+        <div class="social-links">
+            <a href="https://github.com/barisuluer" target="_blank">
+                <img src="Githublogo.png" alt="GitHub Logo"> GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/bar%C4%B1%C5%9F-uluer-03b123342/" target="_blank">
+                <img src="linkedin-logo.png" alt="LinkedIn Logo"> LinkedIn
+            </a>
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">×</span>
+            <h2 id="modalTitle"></h2>
+            <pre><code id="modalCode" class="language-cpp"></code></pre>
+            <p id="modalDescription"></p>
+            <a id="modalLink" href="#" target="_blank">GitHub Link</a>
+        </div>
+    </div>
+
+    <!-- Prism.js Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-cpp.min.js"></script>
+    <script>
+        const projects = {
+            "Hw1-Q2": {
+                code: "/* Addition program */\n#include <stdio.h>\n\n/* function main begins program execution */\nint main(void)\n{\n   int integer1; /* first number to be input by user  */\n   int integer2; /* second number to be input by user */\n   int sum;      /* variable in which sum will be stored */ \n\n   printf( \"Enter first integer\\n\" ); /* prompt */\n   scanf( \"%d\", &integer1 );        /* read an integer */\n\n   printf( \"Enter second integer\\n\" ); /* prompt */\n   scanf( \"%d\", &integer2 );           /* read an integer */\n   \n   sum = integer1 + integer2; /* assign total to sum */\n\n   printf( \"Sum is %d\\n\", sum ); /* print sum */\n   return 0; /* indicate that program ended successfully */\n\n} /* end function main */",
+                description: "Description: The answer of the Q2 on the homework.",
+                link: "https://github.com/barisuluer/Hw1-Q2"
+            },
+            "Hw2-Q3": {
+                code: "#include <stdio.h>\n#include <math.h>\n\nint main() {\n    int pop, size, price;\n\n    printf(\"Enter popularity: \");\n    scanf(\"%d\", &pop);\n    printf(\"Enter size: \");\n    scanf(\"%d\", &size);\n\n    price = (pow(pop, 3) + pow(size, 2)) * 10000;\n\n    printf(\"Home value is: %d\\n\", price);\n\n    return 0;\n}",
+                description: "Description: The answer of the Q3 on the homework.",
+                link: "https://github.com/barisuluer/Hw2-Q3"
+            },
+            "Hw3-Q4a": {
+                code: "#include <stdio.h>\n#include <math.h>\n\nint computeHomeValue(int pop, int size);\n\nint main() {\n    int pop, size, x;\n\n    printf(\"Enter popularity: \");\n    scanf(\"%d\", &pop);\n    printf(\"Enter size: \");\n    scanf(\"%d\", &size);\n\n    printf(\"Home value is: %d\\n\", computeHomeValue(pop, size));\n\n    return 0;\n}\n\nint computeHomeValue(int x, int y) {\n    int price;\n\n    price = (pow(x, 3) + pow(y, 2)) * 10000;\n\n    return price;\n}",
+                description: "Description: The answer of the Q4 part A on the homework.",
+                link: "https://github.com/barisuluer/Hw3-Q4"
+            },
+            "Hw3-Q4b": {
+                code: "#include <stdio.h>\n#include <math.h>\n\nvoid computeHomeValue(void);\n\nint main() {\n    computeHomeValue();\n    return 0;\n}\n\nvoid computeHomeValue(void) {\n    int pop, size, x;\n    int price;\n\n    printf(\"Enter popularity: \");\n    scanf(\"%d\", &pop);\n    printf(\"Enter size: \");\n    scanf(\"%d\", &size);\n\n    price = (pow(pop, 3) + pow(size, 2)) * 10000;\n\n    printf(\"Home value is: %d\\n\", price);\n}",
+                description: "Description: The answer of the Q4 part B on the homework.",
+                link: "https://github.com/barisuluer/Hw3-Q4"
+            }
+        };
+
+        function openModal(title) {
+            const project = projects[title];
+            document.getElementById('modalTitle').textContent = title;
+            const codeElement = document.getElementById('modalCode');
+            codeElement.textContent = project.code;
+            codeElement.className = "language-cpp"; // Set to C++ for all projects
+            document.getElementById('modalDescription').textContent = project.description;
+            document.getElementById('modalLink').href = project.link;
+            document.getElementById('modalLink').textContent = 'GitHub Link: ' + project.link;
+            document.getElementById('projectModal').style.display = 'block';
+            Prism.highlightElement(codeElement); // Highlight the C++ code
+        }
+
+        function closeModal() {
+            document.getElementById('projectModal').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('projectModal');
+            if (event.target == modal) {
+                modal.style.display = 'none';
+            }
+        }
+    </script>
 </body>
 </html>
